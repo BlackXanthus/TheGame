@@ -126,11 +126,15 @@ func process_messages(Type, ID):
 #FirstNode: The Node of the part of the dictionary with a choice.
 func process_choice(MyMessage, FirstNode):
 	
-	#var PopupWindow = WindowDialog.new()
+	var PopupWindow = WindowDialog.new()
 	#self.get_parent().add_child(PopupWindow)
-	var parent = self.get_parent()
-	var ui = parent.get_node("UI")
-	var PopupWindow= ui.get_dialogue_box()
+	var parent=self.get_parent()
+			
+	var ui = parent.get_node("UI").get_vbox()
+	#self.get_parent().add_child(PopupWindow)
+	#var parent = self.get_parent()
+	#var ui = parent.get_node("UI")
+	#var PopupWindow= ui.get_dialogue_box()
 
 	emit_signal("Messages",MyMessage[FirstNode]["Message"])
 
@@ -142,12 +146,8 @@ func process_choice(MyMessage, FirstNode):
 			#this whole popup thing needs to be encapsulated somewhere. 
 			var question = Label.new()
 			question.text=MyMessage[FirstNode]["Choice"]["Message"]
-			#self.get_parent().add_child(PopupWindow)
-			#var parent=self.get_parent()
 			
-			#var ui = parent.get_node("UI")
-			
-			ui.get_vbox().add_child(PopupWindow)
+			ui.add_child(PopupWindow)
 			var MyHboxContainer = HBoxContainer.new()
 			MyHboxContainer.add_child(question)
 			
@@ -162,19 +162,29 @@ func process_choice(MyMessage, FirstNode):
 					button.connect("pressed",self,"display_message",[button])
 					MyHboxContainer.add_child(button)
 					
+					
 			#b.connect("pressed", self, "bt_pressed")
 		#PopupWindow.popup_exclusive(true)
-
-		#Popup Window must be a child of something!
 			PopupWindow.add_child(MyHboxContainer)
-			#PopupWindow.window_title=question.text
+			PopupWindow.window_title=question.text
+			
+			var style = StyleBoxFlat.new()
+			var colour = Color(0,0,0)
+			style.set_bg_color(colour)
+			MyHboxContainer.add_stylebox_override("HBoxContainer",style)
+			
+			#PopupWindow.add_stylebox_override("PopupWindow",style)
+			
+		#Popup Window must be a child of something!
+		
 			#PopupWindow.popup()
 			Message_Popup = PopupWindow
 			
-			Message_Popup.margin_left = 50.00
-			Message_Popup.margin_top = 100.00
+			#PopupWindow.anchor_top=50.00
+			PopupWindow.margin_left = 50.00
+			PopupWindow.margin_top = 100.00
 			#Message_Popup.anchor_bottom = ui.ANCHOR_BOTTOM
-			Message_Popup.anchor_top=50.00
+			
 			
 			#Message_Popup.rect_size=OS.get_real_window_size()
 			#PopupWindow.popup_centered(Vector2(0.5,0.5))
@@ -286,6 +296,7 @@ func _on_Area2D_body_exited(body):
 			pass
 		else:
 			print("DEBUG: Freeing Message Popup")
+			Message_Popup.queue_free()
 			Message_Popup=null
 	InteractionObject=null
 	MessageShown=false

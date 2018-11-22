@@ -18,7 +18,7 @@ anchor_top = 0.0
 anchor_right = 0.01
 anchor_bottom = 0.0
 margin_left = 32.0
-margin_top = 32.0
+margin_top = 64.0
 margin_right = 981.76
 margin_bottom = 576.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -36,7 +36,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
 margin_right = 960.0
-margin_bottom = 544.0
+margin_bottom = 512.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -52,9 +52,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 344.0
+margin_top = 392.0
 margin_right = 952.0
-margin_bottom = 544.0
+margin_bottom = 512.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -63,34 +63,16 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 1
 
-[node name="Dialogue" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+[node name="Messages" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 124.0
-margin_right = 324.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 200, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-
-[node name="Messages" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 328.0
-margin_right = 828.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 500, 200 )
+margin_left = 226.0
+margin_right = 726.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 500, 120 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -118,5 +100,28 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 _sections_unfolded = [ "Anchor", "Caret", "Margin", "Rect", "custom_colors" ]
+
+[node name="Version" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 864.0
+margin_right = 1024.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Version"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "Theme", "Visibility", "custom_fonts", "custom_styles" ]
 
 

@@ -7,7 +7,11 @@ extends CanvasLayer
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	self.set_version(WorldData.get_version())
 	pass
+	
+func set_version(version):
+	$Version.text=version
 	
 func get_gui_text():
 	return $MarginContainer/VBoxContainer/HBoxContainer/Messages.text
