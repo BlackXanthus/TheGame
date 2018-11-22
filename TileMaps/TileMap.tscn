@@ -1,0 +1,325 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://TileMaps/PathAndObjects.png" type="Texture" id=1]
+[ext_resource path="res://InteractiveObjects/PlantPot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileMaps/ProjectUtumno_full.png" type="Texture" id=3]
+[ext_resource path="res://TileMaps/ClosedDoor.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.907, 14.6188 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.8468, 14.0413 )
+
+[node name="Node" type="Node" index="0"]
+
+[node name="Left Corner Hedge" type="Sprite" parent="." index="0"]
+
+position = Vector2( -1.25075, 1.92422 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Left Corner Hedge" index="0"]
+
+position = Vector2( 2.17705, 0.911674 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left Corner Hedge/StaticBody2D" index="0"]
+
+position = Vector2( 0.562548, 1.46081 )
+scale = Vector2( 0.614129, 0.567114 )
+build_mode = 0
+polygon = PoolVector2Array( -1.79123, -1.96637, 21.7312, -1.96637, 21.7312, -31.7746, -31.3194, -31.7746, -31.3194, 23.5061, -1.79123, 23.5061 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Top Straight Hedge" type="Sprite" parent="." index="1"]
+
+position = Vector2( 43.2476, 1.44651 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 32, 32 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Top Straight Hedge" index="0"]
+
+position = Vector2( 0.13932, -0.0739613 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Top Straight Hedge/StaticBody2D" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+build_mode = 0
+polygon = PoolVector2Array( 14.673, -4.33558, -15.7554, -4.33558, -15.4481, -17.8593, 14.9803, -17.8593 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Bottom Straight Hedge2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 43.6061, 78.1625 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 32, 32 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bottom Straight Hedge2" index="0"]
+
+position = Vector2( 0.13932, -0.0739613 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottom Straight Hedge2/StaticBody2D" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+build_mode = 0
+polygon = PoolVector2Array( 15.5439, 13.9219, -15.8066, 13.6145, -15.8066, 2.54967, 15.5439, 2.85703 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Right Corner Hedge" type="Sprite" parent="." index="3"]
+
+position = Vector2( 89.29, 1.54147 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 32, 32 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Right Corner Hedge" index="0"]
+
+position = Vector2( 0.13932, -0.0739613 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right Corner Hedge/StaticBody2D" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+build_mode = 0
+polygon = PoolVector2Array( -16.0016, -17.0322, -15.6942, -3.81583, 5.51347, -4.12318, 5.82083, 13.0888, 14.7342, 13.3962, 14.7342, -17.0322 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Left Hand Wall" type="Sprite" parent="." index="4"]
+
+position = Vector2( -0.0751839, 39.0364 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 32, 32 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Left Hand Wall" index="0"]
+
+position = Vector2( 0.13932, -0.0739613 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left Hand Wall/StaticBody2D" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+build_mode = 0
+polygon = PoolVector2Array( -16.0774, -17.0295, -2.24633, -17.0295, -2.24633, 13.0915, -16.0774, 13.0915 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Right Hand Wall2" type="Sprite" parent="." index="5"]
+
+position = Vector2( 88.8293, 39.7534 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 32, 32 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Right Hand Wall2" index="0"]
+
+position = Vector2( 0.13932, -0.0739613 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right Hand Wall2/StaticBody2D" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+build_mode = 0
+polygon = PoolVector2Array( 6.25865, -17.1318, 14.8647, -17.4392, 14.8647, 13.604, 6.25865, 13.604 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Bottom Right Corner Hedge" type="Sprite" parent="." index="6"]
+
+position = Vector2( 88.4708, 77.3944 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 64, 32, 32 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bottom Right Corner Hedge" index="0"]
+
+position = Vector2( 0.13932, -0.0739613 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottom Right Corner Hedge/StaticBody2D" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+build_mode = 0
+polygon = PoolVector2Array( 6.92451, -16.9678, 6.92451, 3.31777, -15.5126, 3.31777, -15.5126, 13.4606, 15.5305, 13.4606, 15.5305, -16.9678 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Bottom Left Corner Hedge2" type="Sprite" parent="." index="7"]
+
+position = Vector2( -0.0751953, 77.3944 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 32, 32 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bottom Left Corner Hedge2" index="0"]
+
+position = Vector2( 0.13932, -0.0739613 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottom Left Corner Hedge2/StaticBody2D" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+build_mode = 0
+polygon = PoolVector2Array( -3.19126, 4.85456, -3.19126, -17.5825, -15.7978, -17.5549, -15.7978, 13.8502, 14.6355, 13.7679, 14.6355, 5.16192 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Main Tile Path" type="Sprite" parent="." index="8"]
+
+position = Vector2( 42.9548, 38.0658 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 32, 32 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Item" parent="." index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 180.139, 2.04466 )
+
+[node name="ClosedDoor" type="Sprite" parent="." index="10"]
+
+position = Vector2( 137.524, 1.12954 )
+scale = Vector2( 1.04957, 0.960735 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1152, 32, 32, 32 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+ItemID = null
+ItemName = null
+Type = "Door"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ClosedDoor" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor/StaticBody2D" index="0"]
+
+position = Vector2( -0.0106627, -0.16151 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="ClosedDoor" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoor/Area2D" index="0"]
+
+position = Vector2( 0.313822, -0.161513 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+

@@ -1,0 +1,11 @@
+
+Choice=Yes/No - This should be in the base of the decision tree.
+Muppet. 
+
+Give Item=Yes/No - This should be in the base of the decision tree. 
+
+Take Item= Yes/No - This should be in the base of the decision tree. 
+
+This will make the logic run much more smoothly. 
+
+We will still need to check for node existence. 

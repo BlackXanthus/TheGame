@@ -1,0 +1,11 @@
+
+Tilemap for ground and hedges from this post:
+
+https://www.gamefromscratch.com/post/2015/04/28/Godot-Engine-Tutorial-Part-8-Tilemaps.aspx
+
+The tileset is created by : Zabin, Daneeklu, Jetrel, Hyptosis, Redshrike, Bertram
+(Submitted by Zabin). 
+
+Chris Hamons (maintainer)
+(Submitted by MedicineStorm)
+Produced the major tile set: https://opengameart.org/content/dungeon-crawl-32x32-tiles

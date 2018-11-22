@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ItemBase.gd" type="Script" id=1]
+[ext_resource path="res://TileMaps/PathAndObjects.png" type="Texture" id=2]
+[ext_resource path="res://InteractiveObjects/PlantPot.gd" type="Script" id=3]
+
+[node name="ItemBase" type="Node2D"]
+
+script = ExtResource( 1 )
+ItemID = 1
+ItemName = "Plant Pot"
+Type = "Item"
+
+[node name="PlantPot" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0.322018, 2.04466 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 352, 288, 32, 32 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PlantPotBody" type="StaticBody2D" parent="PlantPot" index="0"]
+
+position = Vector2( 0.13932, -0.0739613 )
+scale = Vector2( 0.508927, 0.512257 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlantPot/PlantPotBody" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+scale = Vector2( 1.00847, 1.05208 )
+build_mode = 0
+polygon = PoolVector2Array( -1.63535, 24.0925, 13.0117, 24.0925, 13.3524, -15.4829, -3.3385, -26.1877, -17.3043, -11.5902, -17.3043, 24.0925 )
+
+

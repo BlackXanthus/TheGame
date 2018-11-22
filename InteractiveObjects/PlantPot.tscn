@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://TileMaps/PathAndObjects.png" type="Texture" id=1]
+[ext_resource path="res://InteractiveObjects/PlantPot.gd" type="Script" id=2]
+[ext_resource path="res://BaseClasses/ItemBase.tscn" type="PackedScene" id=3]
+
+[node name="PlantPot" type="Sprite"]
+
+position = Vector2( -0.629293, 3.2338 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 352, 288, 32, 32 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ItemBase" parent="." index="0" instance=ExtResource( 3 )]
+
+ItemID = 1
+
+[node name="PlantPotBody" type="StaticBody2D" parent="." index="1"]
+
+position = Vector2( 0.13932, -0.0739613 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlantPotBody" index="0"]
+
+position = Vector2( 0.419498, 2.14894 )
+build_mode = 0
+polygon = PoolVector2Array( -1.29845, 13.3519, 5.36072, 11.2114, 5.36072, 1.93613, 9.16597, -5.67435, -1.53628, -14.9496, -9.38459, -6.38783, -8.90893, 0.984823, -5.57935, 0.984827, -7.95762, 5.02789, -7.24414, 10.4979 )
+_sections_unfolded = [ "Transform" ]
+
+
